@@ -3,6 +3,7 @@ import { View,
         TextInput,
     StyleSheet,
     Text,
+    Image,
     TouchableOpacity  } from 'react-native';
 
 const FormField = (props) => {
@@ -10,7 +11,8 @@ const FormField = (props) => {
     const image = props.image;
 
     return(
-        <View>
+        <View style={styles.row}>
+            <Image source={image} />
             <TextInput style={[styles.border]}
                 placeholder={placeholder}          
              />
@@ -22,12 +24,12 @@ export default FormField;
 
 const styles = StyleSheet.create({
   border: {
-      flex:1,
-    marginTop:6,
-    marginBottom:6,
-    borderColor: "#ffffff",
-    borderRadius: 6,
-    backgroundColor: "#ffffff",
-    
+
+  },
+  row: {
+      flexDirection:"row",
+      alignItems:"center",
+      backgroundColor: "#ffffff",
+      marginBottom:"5%"
   }
 });

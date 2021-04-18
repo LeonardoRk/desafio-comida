@@ -28,16 +28,24 @@ const Order = () => {
 
 
 const styles = StyleSheet.create({
-
+  borderYellow: {
+    borderWidth:3,
+    borderColor:"#cdee4d"
+  },
+  borderGray: {
+    borderWidth:5,
+    borderColor:"#cccccc"
+  },
   order: {
-    flex:1,
+    alignSelf:'center',
+    width:'70%',
+    height:'30%',
     flexDirection: "row",
     justifyContent: "space-around",
-    borderWidth: 4,
-    borderRadius: 15,
-    borderColor:"#ffffff",
+    borderRadius: 10,
     backgroundColor: "#ffffff", 
     marginBottom: 50,
+    marginTop: '5%',
   },
   
   left: {

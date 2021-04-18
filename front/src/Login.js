@@ -24,7 +24,9 @@ const Login = () => {
                  placeholder={"Senha"}>
             </FormField>
 
-            <TouchableOpacity style={[styles.border, styles.buttonText]}>
+            <TouchableOpacity 
+                style={[styles.border, 
+                    styles.buttonText]}>
                 <Text style={styles.buttonText}>
                     Acessar
                 </Text>
@@ -38,12 +40,12 @@ export default Login;
 
 const styles = StyleSheet.create({
     login: {
-        flex:0.4,
         width:"70%",
-        marginTop:20,
+        alignSelf:'center',
+        marginTop:10,
+        marginBottom:10
     },
   border: {
-    flex:1,
     marginTop:6,
     marginBottom:6,
     borderColor: "#ffffff",
@@ -51,7 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
   },
   buttonText: {
-      flex:1,
       textTransform: 'capitalize',
       backgroundColor: 'orange',
       borderColor: "orange",

@@ -14,7 +14,9 @@ import {
   StyleSheet, 
   Dimensions,
   TextInput,
-  ImageBackground
+  ImageBackground,
+  SafeAreaView,
+  ScrollView
 } from 'react-native';
 
 import Order from './Order';
@@ -29,40 +31,40 @@ const windowHeight = Dimensions.get('window').height;
 
 const App: () => Node = () => {
   return (
-    <View style={styles.app}>
+    <SafeAreaView 
+        style={[styles.app]}>
         <ImageBackground 
-          source={BACKGROUND_IMAGE} 
-          style={[styles.background ]} >
-          
-          <Order ></Order>
-         <Image style={styles.image} source={LOGO_IMAGE}  />
-         <Login></Login>
-          
-
-        </ImageBackground>
-    </View>
+            source={BACKGROUND_IMAGE} 
+            style={[
+                styles.background]} >
+            <ScrollView style={[
+              styles.scroll]}>
+                <Order ></Order>
+                <Image style={styles.image} source={LOGO_IMAGE}  />
+                <Login></Login>
+            
+            </ScrollView>
+          </ImageBackground>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   app: {
-    flex:1,
-    borderWidth:1,
-    borderColor:"#cccccc"
+    display: 'flex',
+    flex:1
   },
   background: {
-    flex: 1,
-    resizeMode: "stretch",
-    paddingLeft: "10%",
-    paddingRight: "10%",
-    paddingTop: "10%",
-    alignItems: "center",
-    borderWidth:1,
-    borderColor:"#bbb444"
+    width:'100%',
+    height:'100%',
+  },
+  scroll: {
+    width:'100%',
+    height:'100%'
   },
   image: {
-    flex:1,
     resizeMode: "contain",
+    alignSelf: 'center'
   }
 
 /*   arrow-up: {
