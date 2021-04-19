@@ -16,35 +16,53 @@ import {
   TextInput,
   ImageBackground,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  TouchableOpacity,
+  Button
 } from 'react-native';
 
-import Order from './Order';
-import Login from './Login';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const BACKGROUND_IMAGE = require('../images/img-bg-login.jpg');
-const LOGO_IMAGE = require('../images/logo-coco-bambu.png');
+import LoginPage from './login/LoginPage';
+import ListaPedidos from './receitas/ListaPedidos';
+
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-
+const Stack = createStackNavigator();
 
 const App: () => Node = () => {
   return (
     <SafeAreaView 
         style={[styles.app]}>
-        <ImageBackground 
-            source={BACKGROUND_IMAGE} 
-            style={[
-                styles.background]} >
-            <ScrollView style={[
-              styles.scroll]}>
-                <Order ></Order>
-                <Image style={styles.image} source={LOGO_IMAGE}  />
-                <Login></Login>
-            
-            </ScrollView>
-          </ImageBackground>
+                <NavigationContainer>
+                  <Stack.Navigator 
+                    screenOptions={{
+                      headerShown: false
+                    }}
+                    initialRouteName="Últimos (todos) pedidos">
+                    {/* <Stack.Screen
+                      name="Home"
+                      component={HomeScreen}
+                      options={{ title: 'Welcome' }}
+                    /> */}
+                    
+                    <Stack.Screen 
+                      name="Login" component={LoginPage}
+                       />
+                    <Stack.Screen 
+                      name="Últimos (todos) pedidos"
+                      /* options={{ headerTitle: () => <Nav></Nav>  }} */
+                      component={ListaPedidos} 
+                      
+                      />
+
+                  
+                  </Stack.Navigator>
+                </NavigationContainer>
+             
     </SafeAreaView>
   );
 };
