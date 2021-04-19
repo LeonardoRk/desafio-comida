@@ -26,6 +26,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginPage from './login/LoginPage';
 import ListaPedidos from './receitas/ListaPedidos';
+import DetalhesPedido from './detalhes/DetalhesPedido'
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -42,7 +43,7 @@ const App: () => Node = () => {
                     screenOptions={{
                       headerShown: false
                     }}
-                    initialRouteName="Últimos (todos) pedidos">
+                    initialRouteName="ListaPedidos">
                     {/* <Stack.Screen
                       name="Home"
                       component={HomeScreen}
@@ -53,11 +54,14 @@ const App: () => Node = () => {
                       name="Login" component={LoginPage}
                        />
                     <Stack.Screen 
-                      name="Últimos (todos) pedidos"
+                      name="ListaPedidos"
                       /* options={{ headerTitle: () => <Nav></Nav>  }} */
                       component={ListaPedidos} 
-                      
                       />
+
+                    <Stack.Screen 
+                      name="DetalhesPedido"
+                      component={DetalhesPedido} />
 
                   
                   </Stack.Navigator>

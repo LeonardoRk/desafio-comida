@@ -8,6 +8,7 @@ const LOGO_IMAGE = require('../../images/prato-arroz-marisco-peq.jpg');
 const PedidoItem = (props) => {
     const index = props.index;
     const item = props.item;
+    const navigation = props.navigation;
     return(
 
         <View key={index} style={styles.revenueSide}>
@@ -29,6 +30,8 @@ const PedidoItem = (props) => {
             </View>
             
             <TouchableOpacity 
+                onPress={() => navigation.navigate('DetalhesPedido',
+                    {backgroundImage:LOGO_IMAGE})}
                 style={[styles.position]}
                     >
                 <Text style={styles.buttonText}>

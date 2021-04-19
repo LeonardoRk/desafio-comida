@@ -21,7 +21,7 @@ const getRevenuesAPI =  async () => {
     }
 };
 
-const ListaPedidos = () => {
+const ListaPedidos = ({navigation}) => {
 
     useEffect(async() => {
         //let revenues = getRevenues();
@@ -30,9 +30,7 @@ const ListaPedidos = () => {
     return(
         <View style={styles.app1}>
             <Nav></Nav>
-            <Pedidos></Pedidos>
-            
-            
+            <Pedidos navigation={navigation}></Pedidos>
         </View>
     )
 }

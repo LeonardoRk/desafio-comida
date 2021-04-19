@@ -14,7 +14,7 @@ import Login from './Login';
 const BACKGROUND_IMAGE = require('../../images/img-bg-login.jpg');
 const LOGO_IMAGE = require('../../images/logo-coco-bambu.png');
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
   return (
     <View>
         <ImageBackground 
@@ -25,7 +25,7 @@ const LoginPage = () => {
                 styles.scroll]}>
                 <Order></Order>
                     <Image style={styles.image} source={LOGO_IMAGE}  />
-                    <Login></Login>
+                    <Login navigation={navigation}></Login>
             </ScrollView>
         </ImageBackground>
         

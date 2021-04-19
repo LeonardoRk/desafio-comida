@@ -12,18 +12,18 @@ const PASS_IMAGE = require('../../images/icon-key.png');
 const CORRECT_PASS = "pass";
 const CORRECT_LOGIN = "login"
 
-const validate = (login, password) => {
+const validate = (login, password, navigation) => {
     console.log(login, password)
     if(login === CORRECT_LOGIN && password === CORRECT_PASS) {
         console.log("login aceito")
         console.log(navigation)
-
+        navigation.navigate('ListaPedidos');
     } else {
         console.log("login e/ou senha errados")
     }
 }
 
-const Login = () => {
+const Login = ({navigation}) => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
 
@@ -45,7 +45,7 @@ const Login = () => {
             <TouchableOpacity 
                 style={[styles.border, 
                     styles.buttonText]}
-                    onPress={() => validate(login, password)}>
+                    onPress={() => validate(login, password, navigation)}>
                 <Text style={styles.buttonText}>
                     Acessar
                 </Text>

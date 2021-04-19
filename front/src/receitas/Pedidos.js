@@ -18,16 +18,17 @@ const reve = ["aqui", "ali", "prato 2", "prato 4"];
 const revenues = ["aqui", "ali", "prato 2", "prato 4"];
 
 
-const Pedidos = () => {
+const Pedidos = ({navigation}) => {
     return(
 
         <View style={styles.revenue}>
             <ScrollView style={styles.scrollView}>
             {reve.map((item, index) => (
-                <View>
+                <View key={item}>
                     <PedidoItem 
                         index={index}
-                        item={item}>
+                        item={item}
+                        navigation={navigation}>
                     </PedidoItem> 
                     <View style={styles.line}></View> 
                 </View>
